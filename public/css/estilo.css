@@ -1,0 +1,71 @@
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+
+.encabezadoCentrado {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+img {
+    width: 6em;
+}
+
+h2, h4{
+    text-align: center;
+}
+
+form {
+    padding-top: 10em;
+}
+
+.loginRow {
+    width: 50%;
+    margin: auto;
+}
+
+input, button {
+    width: 100%;
+}
+
+.loginCol {
+    display: flex;
+    align-items: center;
+}
+
+i {
+    margin: 1em 0.5em 1em 0;
+}
+
+.registroRow {
+    width: 80%;
+    margin: auto;
+}
+
+.colTecnico {
+    padding-top: 1.5em;
+    text-align: center;
+}
+
+.checkboxTecnico {
+    width: 10%;
+}
+
+button {
+    margin-top: 1em;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+a:hover {
+    color: black;
+}
+
+.error {
+    text-align: center;
+}

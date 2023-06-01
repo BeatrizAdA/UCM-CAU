@@ -1,0 +1,114 @@
+.cabecera {
+    margin-top: 1em;
+    border: 3px solid rgb(255, 193, 7);
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filaFija{
+    position: fixed;
+    background-color: white;
+    width: 100%;
+}
+
+.cuerpoPrincipal {
+    padding-top: 12em;
+}
+
+table {
+    text-align: center;
+    margin-top: 2em;
+    table-layout: fixed;
+}
+
+.encabezadoCentrado {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.logo {
+    width: 6em;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.imagenUsuario {
+    width: 6em;
+}
+
+.filaNavBus {
+    height: 4em;
+    align-items: center;
+}
+
+.enlaceNav {
+    text-decoration: none;
+    color: black;
+    margin-left: 1em;
+}
+
+.enlaceNav:hover {
+    color: rgb(255, 193, 7);
+}
+
+.inputBusqueda {
+    width: 60%;
+}
+
+.textareaNuevoAviso {
+    width: 80%;
+    height: 5em;
+}
+
+.espacioFila {
+    margin-top: 1em;
+}
+
+.bordeTextoAviso {
+    background-color: rgb(255, 243, 205);
+    width: 80%;
+    text-align: center;
+    font-style: oblique;
+}
+
+.filaTexto {
+    justify-content: center;
+}
+
+.textareaComentario {
+    margin-top: 2em;
+    width: 100%;
+}
+
+.botonNuevoAviso {
+    float: right;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.amarillo {
+    color:rgb(229, 229, 0);
+}
+
+.rojo {
+    color:rgb(194, 57, 44);
+}
+
+.verde {
+    color:rgb(76, 176, 0);
+}
+
+.filaAsignarTecnico {
+    margin-top: 2em;
+}
+
+.selectAsignarTecnico{
+    width: 10em;
+}

@@ -1,0 +1,22 @@
+<script>
+    function habilitarTecnico() {
+        let selectPerfilUniversitario = document.getElementById("selectPerfilUniversitario");
+        let labelTecnico = document.getElementById("labelTecnico");
+        let tecnico = document.getElementById("tecnico");
+        let labelNumEmpleado = document.getElementById("labelNumEmpleado");
+        let numEmpleado = document.getElementById("numEmpleado");
+
+        if (selectPerfilUniversitario.value === 'PAS') {
+            labelTecnico.hidden = false;
+            tecnico.hidden = false;
+            labelNumEmpleado.hidden = false;
+            numEmpleado.hidden = false;
+        } 
+        else {
+            labelTecnico.hidden = true;
+            tecnico.hidden = true;
+            labelNumEmpleado.hidden = true;
+            numEmpleado.hidden = true;
+        }
+    }
+</script>

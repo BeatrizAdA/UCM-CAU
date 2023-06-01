@@ -1,0 +1,31 @@
+<script>
+    function asignarAviso(boton) {
+        let valor = boton.id;
+        $.ajax({
+            method: "GET",
+            url: "/index/asignar",
+                data: {
+                    num: valor
+                },
+            success: function (data, textStatus, jqXHR) {
+                console.log(textStatus);
+                $("#asignarSelect").empty();
+                $('#asignarModal').modal('show');
+                $("#asignarIdAviso").val(valor);
+                $("#asignarNombre").text(data.aviso[0].nombre);
+                $("#asignarTipo").text(data.aviso[0].tipo);
+                $("#asignarFecha").text("Fecha: " + data.aviso[0].fecha);
+                $("#asignarComunicaciones").text("Comunicaciones: " + data.aviso[0].comunicaciones);
+                $("#asignarPerfil").text("Perfil: " + data.aviso[0].perfilUniversitario);
+                $("#asignarTexto").text(data.aviso[0].texto);
+                $("#asignarSelect").append("<option>"+"</option>");
+                data.nombresTecnicos.forEach(element => {
+                    $("#asignarSelect").append("<option value='"+element.nombre+"'>"+element.nombre+"</option>");
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Se ha producido un error: " + errorThrown);
+            }
+        });
+    }
+</script>

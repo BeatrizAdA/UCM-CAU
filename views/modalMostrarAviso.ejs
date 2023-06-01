@@ -1,0 +1,58 @@
+<div class="modal fade" id="avisoModal" tabindex="-1" aria-labelledby="avisoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="avisoModalLabel">Aviso</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 id="avisoNombre"></h4>
+                    </div>
+                    <div class="col">
+                        <h5 id="avisoTipo"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="avisoFecha"></div>
+                </div>
+                <div class="row">
+                    <div id="avisoComunicaciones"></div>
+                </div>
+                <div class="row">
+                    <div id="avisoPerfil"></div>
+                </div>
+                <div class="row">
+                    <label class="centrado">Observaciones</label>
+                </div>
+                <div class="row filaTexto">
+                    <div id="avisoTexto" class="bordeTextoAviso"></div>
+                </div>
+                <div class="row">
+                    <label class="centrado" id="labelComentario" hidden>Comentarios del técnico</label>
+                </div>
+                <div class="row filaTexto">
+                    <div id="avisoComentarios" class="bordeTextoAviso" hidden></div>
+                </div>
+            <form method="POST" action="/index/comentarioTecnico">
+                <% if(tecnico[0].tecnico) { %>
+                        <input id="comentarioIdAviso" name="comentarioIdAviso" hidden>
+                        <input name="nombreTecnico" value="<%=nombre[0].nombre%>" hidden>
+                        <textarea name="textoComentario" id="textoComentario" placeholder="Escribe el comentario" class="textareaComentario" hidden></textarea>
+                <%}%>
+            </div>
+            <div class="modal-footer">
+                <% if(tecnico[0].tecnico) { %>
+                    <% if(!botonElimnarAvisoEntrante) { %>
+                        <button type="submit" class="btn btn-warning" id="botonTerminarAviso" hidden>Terminar aviso</button>
+                    <%} else {%>
+                        <button type="submit" class="btn btn-warning" id="botonEliminarAviso">Eliminar aviso</button>
+                    <% } %>
+            <%}%>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

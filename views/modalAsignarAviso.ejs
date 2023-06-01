@@ -1,0 +1,51 @@
+<div class="modal fade" id="asignarModal" tabindex="-1" aria-labelledby="asignarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="asignarLabel">Asignar aviso</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <h4 id="asignarNombre"></h4>
+                    </div>
+                    <div class="col">
+                        <h5 id="asignarTipo"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="asignarFecha"></div>
+                </div>
+                <div class="row">
+                    <div id="asignarComunicaciones"></div>
+                </div>
+                <div class="row">
+                    <div id="asignarPerfil"></div>
+                </div>
+                <div class="row">
+                    <label class="centrado">Observaciones</label>
+                </div>
+                <div class="row filaTexto">
+                    <div id="asignarTexto" class="bordeTextoAviso"></div>
+                </div>
+            <form method="POST" action="/index/asignarTecnico">
+                    <input id="asignarIdAviso" name="asignarIdAviso" hidden>
+                    <div class="row filaAsignarTecnico">
+                        <div class="col col-4">
+                            <h6>Técnico asignado</h6>
+                        </div>
+                        <div class="col">
+                            <select id="asignarSelect" name='asignarOpciones' class="selectAsignarTecnico">
+                            </select>
+                        </div>
+                    </div>  
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-warning">Asignar técnico</button> 
+            </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

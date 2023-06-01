@@ -1,0 +1,47 @@
+<script>
+    function mostrarAviso(boton) {
+        let valor = boton.id;
+        $.ajax({
+            method: "GET",
+            url: "/index/aviso",
+                data: {
+                    num: valor
+                },
+            success: function (data, textStatus, jqXHR) {
+                console.log(textStatus);
+                $('#avisoModal').modal('show');
+                $("#avisoNombre").text(data.aviso[0].nombre);
+                $("#avisoTipo").text(data.aviso[0].tipo);
+                $("#avisoFecha").text("Fecha: " + data.aviso[0].fecha);
+                $("#avisoComunicaciones").text("Comunicaciones: " + data.aviso[0].comunicaciones);
+                $("#avisoPerfil").text("Perfil: " + data.aviso[0].perfilUniversitario);
+                $("#avisoTexto").text(data.aviso[0].texto);
+                $("#comentarioIdAviso").val(valor);
+                if(data.aviso[0].comentario !== null){
+                    $("#avisoComentarios").text(data.aviso[0].comentario);
+                    let labelComentario = document.getElementById("labelComentario");
+                    labelComentario.hidden = false;
+                    let avisoComentarios = document.getElementById("avisoComentarios");
+                    avisoComentarios.hidden = false;
+                    let textoComentario = document.getElementById("textoComentario");
+                    textoComentario.hidden = true;
+                    let botonTerminarAviso = document.getElementById("botonTerminarAviso");
+                    botonTerminarAviso.hidden = true;
+                }
+                else {
+                    let labelComentario = document.getElementById("labelComentario");
+                    labelComentario.hidden = true;
+                    let avisoComentarios = document.getElementById("avisoComentarios");
+                    avisoComentarios.hidden = true;
+                    let textoComentario = document.getElementById("textoComentario");
+                    textoComentario.hidden = false;
+                    let botonTerminarAviso = document.getElementById("botonTerminarAviso");
+                    botonTerminarAviso.hidden = false;
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Se ha producido un error: " + errorThrown);
+            }
+        });
+    }
+</script>

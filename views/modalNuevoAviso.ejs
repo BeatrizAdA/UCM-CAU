@@ -1,0 +1,165 @@
+<div class="modal fade" id="nuevoAviso">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo aviso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/index/nuevoAviso">
+                    <div clas="row espacioFila">
+                        <div class="col text-center">
+                            <label>Tipo de aviso:</label>
+                            <select name="selectTipo" id="selectTipo" onchange="seleccionarTipo()">
+                                <option value="vacio"></option>
+                                <option value="Sugerencia">Sugerencia</option>
+                                <option value="Incidencia">Incidencia</option>
+                                <option value="Felicitacion">Felicitación</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row espacioFila">
+                        <div class="col col-5 text-center">
+                            <select name="seleccionar1" id="seleccionar1" hidden onchange="seleccionarTipo2()">
+                                <option value="vacio"></option>
+                                <option value="AdministracionDigital">Administración Digital</option>
+                                <option value="Comunicaciones">Comunicaciones</option>
+                                <option value="Conectividad">Conectividad</option>
+                                <option value="Docencia">Docencia</option>
+                                <option value="Web">Web</option>
+                            </select>
+                        </div>
+                        <div class="col col-5 text-center">
+                            <select name="selectAdministracionDigital" id="selectAdministracionDigital" hidden>
+                                <option value="vacio"></option>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Certificado digital de personal física">Certificado digital de personal física</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Certificado electrónico de empleado público">Certificado electrónico de empleado público</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI" || usuario[0].perfilUniversitario === "AA") { %>
+                                    <option value="Registro electrónico">Registro electrónico</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI" || usuario[0].perfilUniversitario === "AA") { %>
+                                    <option value="Sede electrónica">Sede electrónica</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Portafirmas">Portafirmas</option>
+                                <% } %>
+                            </select>
+                            <select name="selectComunicaciones" id="selectComunicaciones" hidden>
+                                <option value="vacio"></option>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI" || usuario[0].perfilUniversitario === "AA") { %>
+                                    <option value="Correo electrónico">Correo electrónico</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI" || usuario[0].perfilUniversitario === "AA") { %>
+                                    <option value="Google Meet">Google Meet</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "AA") { %>
+                                    <option value="Cuenta de Alumno">Cuenta de Alumno</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Cuenta de personal">Cuenta de personal</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Cuenta genérica">Cuenta genérica</option>
+                                <% } %>
+                            </select>
+                            <select name="selectConectividad" id="selectConectividad" hidden>
+                                <option value="vacio"></option>
+                                <% if(usuario[0].perfilUniversitario === "PAS") { %>
+                                    <option value="Cuenta as la Red SARA">Cuenta as la Red SARA</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Conexión por cable en despachos">Conexión por cable en despachos</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Cortafuegos corporativo">Cortafuegos corporativo</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS") { %>
+                                    <option value="Resolución de nombres de dominio (DNS)">Resolución de nombres de dominio (DNS)</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="VPN Acceso remoto">VPN Acceso remoto</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Wifi Eduroam (ssid: eduroam)">Wifi Eduroam (ssid: eduroam)</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Wifi para visitantes (ssid: UCM-Visitantes)">Wifi para visitantes (ssid: UCM-Visitantes)</option>
+                                <% } %>
+                            </select>
+                            <select name="selectDocencia" id="selectDocencia" hidden>
+                                <option value="vacio"></option>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Aula virtual">Aula virtual</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Blackboard Collaborate">Blackboard Collaborate</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Listados de clase">Listados de clase</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Moodle: Aula Global">Moodle: Aula Global</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Plataforma de cursos online privados">Plataforma de cursos online privados</option>
+                                <% } %>
+                            </select>
+                            <select name="selectWeb" id="selectWeb" hidden>
+                                <option value="vacio"></option>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Analítica Web">Analítica Web</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Emisión de certificados SSL">Emisión de certificados SSL</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Hosting: alojamiento de páginas web">Hosting: alojamiento de páginas web</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "Alumno" || usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI" || usuario[0].perfilUniversitario === "AA") { %>
+                                    <option value="Portal de eventos">Portal de eventos</option>
+                                <% } %>
+                                <% if(usuario[0].perfilUniversitario === "PAS" || usuario[0].perfilUniversitario === "PDI") { %>
+                                    <option value="Redirecciones web">Redirecciones web</option>
+                                <% } %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row espacioFila">
+                        <div class="col text-center">
+                            <select name="selectFelicitacion" id="selectFelicitacion" hidden>
+                                <option value="vacio"></option>
+                                <option value="Archivo Universitario">Archivo Universitario</option>
+                                <option value="Asesoría Jurídica">Asesoría Jurídica</option>
+                                <option value="Biblioteca">Biblioteca</option>
+                                <option value="Centro de Información">Centro de Información</option>
+                                <option value="Departamentos docentes">Departamentos docentes</option>
+                                <option value="Inspección de Servicios">Inspección de Servicios</option>
+                                <option value="Oficina de Gestión de Infraestructuras y Mantenimiento">Oficina de Gestión de Infraestructuras y Mantenimiento</option>
+                                <option value="Servicio de Administración">Servicio de Administración</option>
+                                <option value="Servicios Informáticos">Servicios Informáticos</option>
+                                <option value="Servicio de Documentación">Servicio de Documentación</option>
+                                <option value="Servicio de Imprenta">Servicio de Imprenta</option>
+                                <option value="Servicio de Cafetería">Servicio de Cafetería</option>
+                                <option value="Toda la Universidad">Toda la Universidad</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row espacioFila">
+                        <div class="col text-center">
+                            <textarea placeholder="Escribe las observaciones" id="textObservaciones" name="textObservaciones" class="textareaNuevoAviso" hidden required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning">Aceptar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+<script>
+    function seleccionarTipo() {
+        let selectTipo = document.getElementById("selectTipo");
+        let seleccionar1 = document.getElementById("seleccionar1");
+        let textObservaciones = document.getElementById("textObservaciones");
+        let selectFelicitacion = document.getElementById("selectFelicitacion");
+        let selectAdministracionDigital = document.getElementById("selectAdministracionDigital");
+        let selectComunicaciones = document.getElementById("selectComunicaciones");
+        let selectConectividad = document.getElementById("selectConectividad");
+        let selectDocencia = document.getElementById("selectDocencia");
+        let selectWeb = document.getElementById("selectWeb");
+
+        if (selectTipo.value === 'Sugerencia' || selectTipo.value === 'Incidencia') {
+            seleccionar1.hidden = false;
+            seleccionar1.value = 'vacio';
+            textObservaciones.hidden = false;
+            selectFelicitacion.hidden = true;
+            selectFelicitacion.value = 'vacio';
+            selectAdministracionDigital.hidden = true;
+            selectComunicaciones.hidden = true;
+            selectConectividad.hidden = true;
+            selectDocencia.hidden = true;
+            selectWeb.hidden = true;
+        }
+        else if(selectTipo.value === 'Felicitacion') {
+            selectFelicitacion.hidden = false;
+            selectFelicitacion.value = 'vacio';
+            textObservaciones.hidden = false;
+            seleccionar1.hidden = true;
+            seleccionar1.value = 'vacio';
+            selectAdministracionDigital.hidden = true;
+            selectComunicaciones.hidden = true;
+            selectConectividad.hidden = true;
+            selectDocencia.hidden = true;
+            selectWeb.hidden = true;
+        }
+        else {
+            seleccionar1.value = 'vacio';
+            seleccionar1.hidden = true;
+            selectFelicitacion.value = 'vacio';
+            selectFelicitacion.hidden = true;
+            textObservaciones.hidden = true;
+            selectAdministracionDigital.hidden = true;
+            selectComunicaciones.hidden = true;
+            selectConectividad.hidden = true;
+            selectDocencia.hidden = true;
+            selectWeb.hidden = true;
+        }
+    }
+
+    function seleccionarTipo2() {
+        let seleccionar1 = document.getElementById("seleccionar1");
+        let selectAdministracionDigital = document.getElementById("selectAdministracionDigital");
+        let selectComunicaciones = document.getElementById("selectComunicaciones");
+        let selectConectividad = document.getElementById("selectConectividad");
+        let selectDocencia = document.getElementById("selectDocencia");
+        let selectWeb = document.getElementById("selectWeb");
+
+        if (seleccionar1.value === 'AdministracionDigital') {
+            selectAdministracionDigital.hidden = false;
+            selectAdministracionDigital.value = 'vacio';
+            selectComunicaciones.hidden = true;
+            selectComunicaciones.value = 'vacio';
+            selectConectividad.hidden = true;
+            selectConectividad.value = 'vacio';
+            selectDocencia.hidden = true;
+            selectDocencia.value = 'vacio';
+            selectWeb.hidden = true;
+            selectWeb.value = 'vacio';
+        }
+        else if(seleccionar1.value === 'Comunicaciones') {
+            selectComunicaciones.hidden = false;
+            selectComunicaciones.value = 'vacio';
+            selectAdministracionDigital.hidden = true;
+            selectAdministracionDigital.value = 'vacio';
+            selectConectividad.hidden = true;
+            selectConectividad.value = 'vacio';
+            selectDocencia.hidden = true;
+            selectDocencia.value = 'vacio';
+            selectWeb.hidden = true;
+            selectWeb.value = 'vacio';
+        }
+        else if(seleccionar1.value === 'Conectividad') {
+            selectConectividad.hidden = false;
+            selectConectividad.value = 'vacio';
+            selectAdministracionDigital.hidden = true;
+            selectAdministracionDigital.value = 'vacio';
+            selectComunicaciones.hidden = true;
+            selectComunicaciones.value = 'vacio';
+            selectDocencia.hidden = true;
+            selectDocencia.value = 'vacio';
+            selectWeb.hidden = true;
+            selectWeb.value = 'vacio';
+        }
+        else if(seleccionar1.value === 'Docencia') {
+            selectDocencia.hidden = false;
+            selectDocencia.value = 'vacio';
+            selectAdministracionDigital.hidden = true;
+            selectAdministracionDigital.value = 'vacio';
+            selectComunicaciones.hidden = true;
+            selectComunicaciones.value = 'vacio';
+            selectConectividad.hidden = true;
+            selectConectividad.value = 'vacio';
+            selectWeb.hidden = true;
+            selectWeb.value = 'vacio';
+        }
+        else if(seleccionar1.value === 'Web') {
+            selectWeb.hidden = false;
+            selectWeb.value = 'vacio';
+            selectAdministracionDigital.hidden = true;
+            selectAdministracionDigital.value = 'vacio';
+            selectComunicaciones.hidden = true;
+            selectComunicaciones.value = 'vacio';
+            selectConectividad.hidden = true;
+            selectConectividad.value = 'vacio';
+            selectDocencia.hidden = true;
+            selectDocencia.value = 'vacio';
+        }
+        else {
+            selectAdministracionDigital.hidden = true;
+            selectAdministracionDigital.value = 'vacio';
+            selectComunicaciones.hidden = true;
+            selectComunicaciones.value = 'vacio';
+            selectConectividad.hidden = true;
+            selectConectividad.value = 'vacio';
+            selectDocencia.hidden = true;
+            selectDocencia.value = 'vacio';
+            selectWeb.hidden = true;
+            selectWeb.value = 'vacio';
+        }
+    }
+</script>
